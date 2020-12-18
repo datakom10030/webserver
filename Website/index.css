@@ -1,0 +1,129 @@
+/*This is the stylesheet for the index page*/
+
+.main-page {
+    grid-template-columns: 1fr 3fr;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /*grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));*/
+    justify-content: flex-start;
+    width: border-box;
+    padding: 1% 1%;
+}
+
+.choose-sensor{
+    display: flex;
+    /*margin: 1px;*/
+    /*padding: 1px;*/
+    background-color: #01497C;
+}
+.choose-sensor p {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    margin: 2px;
+    font-family: Arial;
+    font-size: larger;
+}
+#sensor-picker {
+    width: 80px;
+}
+#sensor-page {
+    display: inline-flex;
+}
+
+
+.info-line {
+    /*display: grid;*/
+    /*grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));*/
+    /*width: 100%;*/
+    display: inline-flex;
+    /*justify-content: center;*/
+    align-items:center;
+    font-family: Arial;
+}
+
+.info-text {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 90px;
+    font-family: Arial;
+
+}
+
+.info-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    border: solid #012A4A;
+    background: #89C2D9;
+    height: 25px;
+    text-align: center;
+    margin: 2px;
+}
+.timestamp {
+    display: inline-flex;
+    /*justify-content: center;*/
+    align-items: center;
+    width: 75px;
+    /*border: solid black;*/
+    /*background: #7AD661;*/
+    height: 25px;
+    text-align: left;
+    margin: 2px;
+    font-size: x-small;
+}
+.graph-window {
+    /*display: flex;*/
+    /*width: 100%;*/
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+.graph {
+    /*Styling of the graph element*/
+    /*width: 100%;*/
+    /*height: 400px;*/
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-left: 1px solid rgba(240, 240, 240, 1.0);
+    border-bottom: 2px solid rgba(240, 240, 240, 1.0);
+    height: 90%;
+    width: 90%;
+    position: relative;
+}
+
+#log-length {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+.log-type p{
+    margin: 0;
+    padding: 2px 2px;
+}
+.log-type label {
+    margin: 2px;
+}
+.log-type input {
+    margin: 2px;
+
+}
+
+#time-picker {
+    /*This is edited by the script*/
+    display: none;
+}

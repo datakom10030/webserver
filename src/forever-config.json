@@ -1,0 +1,16 @@
+[
+  {
+    "uid": "webserver",
+    "append": true,
+    "watch": true,
+    "script": "src/index.js",
+    "sourceDir": "/home/server/webserver"
+  },
+  {
+    "uid": "raspberry_pi_server",
+    "append": true,
+    "watch": false,
+    "script": "src/index.js",
+    "sourceDir": "/home/server/raspberry_pi_server"
+  }
+]

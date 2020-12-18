@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="changeRobotStyle.css">
+    <script src="libraries/socket.io.js"></script>
+</head>
+<body>
+<h1> Kontroll plattform</h1>
+<!--Define the navigation menu-->
+<nav>
+    <a href="./index.html">Hovedside</a>
+    <a href="./changeRobot.html">Endre Robot</a>
+    <a href="./changeSensor.html">Endre Sensor</a>
+</nav>
+
+<main>
+    <!--Selector for changing the selected robot-->
+    <div class="choose-robot">
+        <p>Velg en robot: </p>
+        <select id="robot-picker">
+            <!--Is only used as a placeholder-->
+            <option value="" disabled selected>Robot</option>
+        </select>
+        <input type="button" value="legg til" id="add-robot">
+    </div>
+    <div class="main-content">
+        <div class="main-info" id="sensor-picker">
+            <div class="robot-title">
+                <p class="info-text">Robot ID: </p>
+                <input type="text" disabled value="Robot ID" id="robot-id">
+            </div>
+        <!--The elements added by the script are placed here-->
+        </div>
+    </div>
+    <div class="info-button">
+        <button type="button" id="update-robot-settings">Lagre nye innstillinger</button>
+    </div>
+    <!--Element for displaying error codes-->
+    <p id="error"></p>
+</main>
+<script src="script/change-robot-script.js"></script>
+
+</body>
+</html>

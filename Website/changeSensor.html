@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <!--There are two stylesheet used-->
+    <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="changeSensorStyle.css">
+    <script src="libraries/socket.io.js"></script>
+</head>
+<body>
+<h1> Kontroll plattform</h1>
+<!--Define the navigation menu-->
+<nav>
+    <a href="./index.html">Hovedside</a>
+    <a href="./changeRobot.html">Endre Robot</a>
+    <a href="./changeSensor.html">Endre Sensor</a>
+</nav>
+
+<main>
+    <!--Selector for changing the selected sensor-->
+    <div class="choose-sensor">
+        <p>Velg en sensor: </p>
+        <select id="sensor-picker">
+            <!--Is only used as a placeholder-->
+            <option value="" disabled>Sensor</option>
+        </select>
+        <input type="button" value="legg til" id="add-sensor">
+    </div>
+    <div class="main-content" id="sensor-page">
+        <!--Define all the lines for displaying the configuration-->
+        <div class="main-info">
+            <div class="sensor-title">
+                <p class="info-text">SensorID: </p>
+                <input type="text" disabled value="Sensor ID" id="sensor-id">
+            </div>
+            <div class="info-line">
+                <p class="info-text">Sensor type: </p>
+                <select class="info-box" id="sensor-type">
+                    <option value="" disabled selected>Velg type</option>
+                    <option value="temperature">Temperatur</option>
+                    <option value="co2">CO2</option>
+                </select>
+            </div>
+            <div class="info-line">
+                <p class="info-text">Funksjon:</p>
+                <select class="info-box" id="sensor-function">
+                    <option value="" disabled selected>Velg funksjon</option>
+                </select>
+            </div>
+            <div class="info-line" id="hide-setpoint">
+                <p class="info-text">Settpunkt:</p>
+                <input class="info-box" id="sensor-setpoint" placeholder="###">
+            </div>
+            <div class="info-line">
+                <div class="info-text">Robot ID:</div>
+                <select class="info-box" id="robot-id">
+                    <option value="" disabled selected>Velg robot</option>
+                </select>
+            </div>
+            <div class="info-line">
+            <button type="button" id="update-sensor-settings">Lagre nye innstillinger</button>
+            </div>
+            <!--Element for displaying error codes-->
+            <p id="error"></p>
+        </div>
+    </div>
+</main>
+<script src="script/change-sensor-script.js"></script>
+
+</body>
+</html>

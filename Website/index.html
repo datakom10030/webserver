@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <!--There are two stylesheet used-->
+    <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="libraries/Chart.bundle.js"></script> <!--Load Chart.js library-->
+    <script src="libraries/socket.io.js"></script> <!--Load Chart.js library-->
+
+</head>
+<body>
+<h1> Kontroll plattform</h1>
+<!--Define the navigation menu-->
+<nav>
+    <a href="./index.html">Hovedside</a>
+    <a href="./changeRobot.html">Endre Robot</a>
+    <a href="./changeSensor.html">Endre Sensor</a>
+</nav>
+
+
+<main>
+    <!--Selector for changing the selected sensor-->
+    <div class="choose-sensor">
+        <p>Velg en sensor: </p>
+        <select id="sensor-picker">
+            <option value="none" disabled selected>Sensor</option>
+        </select>
+    </div>
+    <div class="main-content" id="sensor-page">
+        <div class="main-page">
+            <!--This is were all the sensor information is displayed-->
+            <div class="main-info">
+                <h2 id="sensor-name">SensorID: </h2>
+                <div class="info-line">
+                    <div class="info-text" id="sensor-type">Temperatur:</div>
+                    <div class="info-box" id="last-sensor-value">###</div>
+                    <div class="timestamp" id="sensor-value-time">###</div>
+                </div>
+                <div class="info-line" id="hide-setpoint">
+                    <div class="info-text">Settpunkt:</div>
+                    <div class="info-box" id="sensor-setpoint">###</div>
+                </div>
+                <div class="info-line">
+                    <div class="info-text">Funksjon:</div>
+                    <div class="info-box" id="sensor-function">###</div>
+                </div>
+                <div class="info-line" id="hide-output">
+                    <div class="info-text">Utgang:</div>
+                    <div class="info-box" id="output-value">###</div>
+                    <div class="timestamp" id="output-value-time">###</div>
+                </div>
+                <div class="info-line">
+                    <div class="info-text">Robot ID:</div>
+                    <div class="info-box" id="robot-id">###</div>
+                </div>
+
+            </div>
+            <div class="graph-window">
+                <!--Graph element used for showing historical data-->
+                <div class="graph">
+                    <canvas id="myChart"></canvas>
+                </div>
+                <!--Define a form for selecting the range for the graph-->
+                <form class="log-type" id="log-length">
+                    <!-- Form for selecting the log period, the value is log period in hours and 0 is reserved other -->
+                    <p>Show data from:</p>
+                    <input type="radio" id="12-hr" name="log-period" value="12" checked>
+                    <label for="12-hr">12 hours</label><br>
+                    <input type="radio" id="1day" name="log-period" value="24">
+                    <label for="1day">1 day</label><br>
+                    <input type="radio" id="7days" name="log-period" value="168">
+                    <label for="7days">7 days</label><br>
+                    <input type="radio" id="other" name="log-period" value="0">
+                    <label for="other">other</label>
+                </form>
+                <form id="time-picker">
+                    <!-- Form for specifying the log period if the log period is set to other -->
+                    <label for="from-time">Fra: </label>
+                    <input type="time" id="from-time" name="time-from">
+                    <input type="date" placeholder="yyyy-mm-dd" name="date-from"><br>
+                    <label for="to-time">Til:  </label>
+                    <input type="time" id="to-time" name="time-to" >
+                    <input type="date" placeholder="yyyy-mm-dd" name="date-to">
+                    <!--The pattern is for recognizing and ensuring that the date is in the correct format -->
+                    <input type="button" value="Oppdater" id="update-time-range">
+                </form>
+                <div>
+                <!--This text is only here to fix a formatting issue for the webpage-->
+                <p style="color: #A9D6E5"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab dignissimos facere illum iure magni nam
+                    ratione, sunt voluptas. Assumenda atque consequatur doloribus, eos error illo illum recusandae!
+                    Facilis, fugit, quisquam?</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+<!--Script for the chart-->
+<script src="script/chartoperation.js"></script>
+<!--The main script with all the main functionality-->
+<script src="script/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+/*This is the stylesheet for the change sensor page*/
+
+.choose-sensor{
+    display: flex;
+    /*margin: 1px;*/
+    /*padding: 1px;*/
+    background-color: #01497C;
+}
+.choose-sensor p {
+    /*The text before the sensor picker*/
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    margin: 2px;
+    font-family: Arial;
+    font-size: larger;
+}
+#sensor-picker {
+    width: 80px;
+}
+.sensor-title h2 {
+    display: inline-flex;
+}
+.sensor-title input{
+    display: inline-flex;
+}
+.main-info{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.info-line {
+    /*display: grid;*/
+    /*grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));*/
+    /*width: 100%;*/
+    display: inline-flex;
+    /*justify-content: center;*/
+    align-items:center;
+    padding: 2px;
+}
+
+.info-text {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    /*border: solid black;*/
+    /*background: #7AD661;*/
+    height: 30px;
+    text-align: center;
+    margin: 2px;
+    font-family: Arial;
+    font-size: large;
+}
+#error {
+    /*Any error messages should be displayed in red*/
+    color: #E23636;
+}
